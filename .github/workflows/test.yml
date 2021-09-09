@@ -12,7 +12,7 @@ jobs:
     name: Test
     runs-on: ubuntu-20.04
     # if: github.repository == 'traefik/traefik-helm-chart'
-    environment:
+    env:
       TMPDIR: /tmp
       ARCH: amd64
       CATTLE_HELM_UNITTEST_VERSION: v0.1.6-rancher1
