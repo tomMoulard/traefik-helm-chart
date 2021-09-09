@@ -1,14 +1,15 @@
-name: Deploy
+name: Test
 
 on:
+  pull_request:
   push:
     branches:
       - master
 
 jobs:
 
-  deploy:
-    name: Deploy
+  test:
+    name: Test
     runs-on: ubuntu-20.04
     # if: github.repository == 'traefik/traefik-helm-chart'
     environment:
@@ -31,10 +32,3 @@ jobs:
 
       - name: Make
         run: make
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          branch: gh-pages
-          folder: repo/
-          clean: false
